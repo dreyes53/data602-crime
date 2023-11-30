@@ -5,7 +5,7 @@ import React, {useState, useEffect} from "react";
 import useConfig from "./components/useConfig";
 import logo from "./logo.svg";
 
-const API_URL = 'https://5b12yu9a45.execute-api.us-east-1.amazonaws.com/dev/quote'
+const API_URL = 'https://5b12yu9a45.execute-api.us-east-1.amazonaws.com/dev/crime'
 
 /**
  * Our Web Application
