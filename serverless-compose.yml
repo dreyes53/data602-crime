@@ -1,8 +1,5 @@
 services:
 
-  backend:
-    path: backend
-
   frontend:
     path: frontend
 
