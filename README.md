@@ -13,5 +13,5 @@
 5. In the project directory run this command to install Node: `nvm install`, and Node.js should have been installed.
 6. Go into `frontend` directory: `cd directory`
 7. Run `npm install` to install all of the packages.
-8. Run command to run frontend locally: `npm start:offline`
+8. Run command to run frontend locally: `npm run start`
 7. Verify your frontend is up and running by going to your browser and type in the address bar `http://127.0.0.1:3000`, then you should see the app running.

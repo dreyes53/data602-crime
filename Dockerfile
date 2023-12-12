@@ -17,5 +17,7 @@ RUN pip install -r requirements.txt
 COPY backend/handler.py .
 COPY backend/historical_crime_data.db .
 
+RUN mkdir -p plot_images
+
 # Specify the command to run on container start
 CMD [ "python", "./handler.py" ]
