@@ -40,9 +40,19 @@ export default function App() {
     const clean_data = []
 
     for (let i = 0; i < idx_keys.length; i++) {
-      clean_data.push({'date': dataset['ds'][idx_keys[i]], 'value': dataset['yhat'][idx_keys[i]]})
+      clean_data.push({'date': dataset['ds'][idx_keys[i]], 'value': dataset['prediction'][idx_keys[i]]})
     } 
     return clean_data
+  }
+
+  const sum_prediction = (data: never) => {
+    const dataset = data['7']['predicted_data']
+    const idx_keys = Object.keys(dataset['prediction'])
+    let total_prediction = 0;
+    for (let i = 0; i < idx_keys.length; i++) {
+      total_prediction = total_prediction + dataset['prediction'][idx_keys[i]]
+    } 
+    return total_prediction
   }
 
   return (
@@ -89,7 +99,8 @@ export default function App() {
             </table>: ''}
         </div>
         <div className="column">
-        {data ? <b>Mean Absolute Percentage Error: </b>: ''} {data ? data['7']['MAPE'] : ''}
+        {data ? <b>Mean Absolute Percentage Error: </b>: ''} {data ? data['7']['MAPE'] : ''} <br />
+        {data ? <b>Total Prediction for upcoming week: </b>: ''} {data ? sum_prediction(data) : ''}
       </div>
       </div>
       {data ?

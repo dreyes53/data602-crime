@@ -128,6 +128,8 @@ def get_crime_data():
         print("Forecast: ")
         # predicted_data = forecast_m2[forecast_m2['ds'] > start_day_of_predicted_week][['ds', 'yhat']]
         predicted_data = forecast_m2[forecast_m2['ds'] > start_day_of_predicted_week][['ds', 'yhat']]
+        for index, row in predicted_data.iterrows():
+            predicted_data.at[index, 'prediction'] = np.exp(row['yhat'])
         current_data['predicted_data'] = predicted_data.to_dict()
         
         fig = m2_no_outlier.plot_components(forecast_m2)
